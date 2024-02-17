@@ -45,6 +45,7 @@ TWLSettings::TWLSettings()
 	gbar2DldiAccess = false;
 	showMainMenu = false;
 	showSelectMenu = false;
+	rocketRobzLogo = true;
 	theme = EThemeDSi;
 	settingsMusic = ESMusicTheme;
 	dsiMusic = EMusicTheme;
@@ -200,6 +201,7 @@ void TWLSettings::loadSettings()
 	gbar2DldiAccess = settingsini.GetInt("SRLOADER", "GBAR2_DLDI_ACCESS", gbar2DldiAccess);
 	showMainMenu = settingsini.GetInt("SRLOADER", "SHOW_MAIN_MENU", showMainMenu);
 	showSelectMenu = settingsini.GetInt("SRLOADER", "SHOW_SELECT_MENU", showSelectMenu);
+	rocketRobzLogo = settingsini.GetInt("SRLOADER", "ROCKET_ROBZ_LOGO", rocketRobzLogo);
 	theme = (TTheme)settingsini.GetInt("SRLOADER", "THEME", theme);
 	settingsMusic = (TSettingsMusic)settingsini.GetInt("SRLOADER", "SETTINGS_MUSIC", settingsMusic);
 	dsiMusic = (TDSiMusic)settingsini.GetInt("SRLOADER", "DSI_MUSIC", dsiMusic);
@@ -388,6 +390,7 @@ void TWLSettings::saveSettings()
 	settingsini.SetInt("SRLOADER", "SHOW_HIDDEN", showHidden);
 	settingsini.SetInt("SRLOADER", "SHOW_PHOTO", showPhoto);
 	settingsini.SetInt("SRLOADER", "SHOW_BOX_ART", showBoxArt);
+	settingsini.SetInt("SRLOADER", "ROCKET_ROBZ_LOGO", rocketRobzLogo);
 	settingsini.SetInt("SRLOADER", "ANIMATE_DSI_ICONS", animateDsiIcons);
 	settingsini.SetInt("SRLOADER", "SHOW_CUSTOM_ICONS", showCustomIcons);
 	settingsini.SetInt("SRLOADER", "PREVENT_ROM_DELETION", preventDeletion);
@@ -458,7 +461,7 @@ void TWLSettings::saveSettings()
 	settingsini.SetInt("SRLOADER", "LAUNCH_TYPE", launchType[0]);
 	settingsini.SetInt("SRLOADER", "SECONDARY_LAUNCH_TYPE", launchType[1]);
 	settingsini.SetString("SRLOADER", "HOMEBREW_ARG", homebrewArg[0]);
-	settingsini.SetString("SRLOADER", "SECONDARY_HOMEBREW_ARG", homebrewArg[0]);
+	settingsini.SetString("SRLOADER", "SECONDARY_HOMEBREW_ARG", homebrewArg[1]);
 	settingsini.SetInt("SRLOADER", "HOMEBREW_BOOTSTRAP", homebrewBootstrap);
 	settingsini.SetInt("SRLOADER", "HOMEBREW_HAS_WIDE", 0);
 
